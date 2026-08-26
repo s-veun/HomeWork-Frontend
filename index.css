@@ -1,0 +1,469 @@
+:root {
+  --page-bg: #e9edf2;
+  --text: #161616;
+  --blue: #244c8f;
+  --shadow: rgba(18, 37, 67, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Tacteing Local";
+  src: url("Tacteing.ttf") format("truetype");
+  font-display: swap;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--page-bg);
+  font-family: "Siemreap", sans-serif;
+  color: var(--text);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 28px 20px;
+}
+
+.moul-regular {
+  font-family: "Moul", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.siemreap-regular {
+  font-family: "Siemreap", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.page {
+  position: relative;
+  width: min(820px, 92vw);
+  min-height: 1160px;
+  background: #fff;
+  box-shadow: 0 12px 30px var(--shadow);
+  border: 1px solid #d9dee7;
+  overflow: hidden;
+  padding: 32px 58px 22px;
+}
+
+.watermark {
+  position: absolute;
+  inset: 190px 0 130px;
+  width: 100%;
+  opacity: 0.16;
+  background-image: url("logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70% auto;
+  pointer-events: none;
+}
+
+.topbar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  width: 210px;
+}
+
+.logo {
+  width: 210px;
+  height: auto;
+  object-fit: contain;
+  filter: none;
+}
+
+.brand-text {
+  font-size: clamp(2.2rem, 2vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #0d3d8f;
+  font-family: "Segoe UI", "Khmer OS", sans-serif;
+}
+
+.header-texts {
+  text-align: center;
+  margin-top: -2px;
+  color: #111;
+  font-family: "Siemreap", sans-serif;
+}
+
+.khmer-small {
+  font-size: 0.82rem;
+  line-height: 1.75;
+  font-weight:bold;
+  color: #2101edf0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 24px auto 0;
+  text-align: center;
+}
+
+.notice-kicker {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-family: "Tacteing Local", "Moul", sans-serif;
+  letter-spacing: 0;
+  margin-bottom: 6px;
+}
+
+.header{
+  margin-left: auto;
+  margin-right: auto;
+  color: #111;
+  font-family: "Moul", sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 2px;
+  max-width: 650px;
+  font-size: 1.36rem;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 620px;
+  font-size: 1.2rem;
+}
+
+h3 {
+  margin-top: 1px;
+  margin-bottom: 0;
+  font-size: 1.08rem;
+}
+
+.intro {
+  max-width: 830px;
+  margin: 28px auto 0;
+  font-size: 0.86rem;
+  line-height: 1.9;
+  color: #111;
+  font-family: "Siemreap", sans-serif;
+}
+
+.details {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 26px auto 0;
+  text-align: left;
+  font-size: 0.86rem;
+  line-height: 1.85;
+  color: #111;
+  font-family: "Siemreap", sans-serif;
+}
+
+.detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.label {
+  display: inline-block;
+  min-width: 28px;
+  font-weight: 800;
+}
+
+.detail-row strong {
+  font-weight: 800;
+}
+
+.closing {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #111;
+  font-family: "Siemreap", sans-serif;
+}
+
+.closing p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.sign-off {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.date-block {
+  text-align: center;
+  font-family: "Siemreap", sans-serif;
+  font-size: 0.86rem;
+  color: #111;
+}
+
+.date-block p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 34px;
+  padding-top: 12px;
+}
+
+.footer-bar {
+  height: 2px;
+  background: var(--blue);
+  margin: 0 auto 8px;
+}
+
+.footer-row {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.footer-brand {
+  font-family: Georgia, serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #0f2d66;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+  font-size: 0.58rem;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  color: #0b3d88;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 18px 12px;
+  }
+
+  .page {
+    padding: 24px 20px 18px;
+    min-height: auto;
+  }
+
+  .topbar {
+    gap: 12px;
+  }
+
+  .brand {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .logo{
+    width: 155px;
+    height: auto;
+  }
+
+  .details {
+    font-size: 0.78rem;
+  }
+
+  .contact-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-item {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+/* Final document layout overrides */
+.page {
+  width: min(760px, 100%);
+  min-height: 1110px;
+  padding: 44px 64px 20px;
+  background: #fff;
+  border: 1px solid #d7dbe1;
+  box-shadow: 0 5px 18px var(--shadow);
+}
+
+.watermark {
+  inset: 355px auto auto 50%;
+  width: 570px;
+  height: 570px;
+  transform: translateX(-50%);
+  opacity: .15;
+  background-image: none;
+  background-size: contain;
+}
+
+.watermark-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.topbar, .content, .footer { position: relative; z-index: 1; }
+
+.topbar { min-height: 128px; }
+.brand, .logo { width: 205px; }
+.logo { height: auto; }
+.header-texts { width: 235px; color: var(--blue); }
+.khmer-small { font-size: .82rem; line-height: 1.7; }
+.national-header { text-align: center; }
+.kingdom {
+  color: var(--blue);
+  font-family: "Moul", serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.motto {
+  color: var(--blue);
+  font-family: "Siemreap", sans-serif;
+  font-size: .82rem;
+  line-height: 1.7;
+}
+.header-rule {
+  width: 68px;
+  height: 1px;
+  margin: 24px auto 0;
+  background: var(--blue);
+}
+
+.content {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.title-block {
+  width: 100%;
+  text-align: center;
+  font-family: "Tacteing Local", sans-serif;
+}
+.title-block .moul,
+.title-block .course-khmer,
+.thanks.moul {
+  font-family: "Tacteing Local", sans-serif;
+  font-weight: 400;
+}
+.title-line {
+  font-size: 1.2rem;
+  line-height: 1.55;
+  text-align: center;
+}
+.course-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+.course-khmer { font-family: "Tacteing Local", sans-serif; }
+.course-en { font-weight: 700; }
+.year-line { font-size: 1.08rem; }
+
+.paragraph { margin: 20px 0 0; font-size: .9rem; line-height: 1.9; }
+.paragraph + .paragraph { margin-top: 0; }
+.rules { margin-top: 17px; font-size: .87rem; line-height: 1.78; }
+.rule-row { grid-template-columns: 42px 1fr; gap: 9px; margin-bottom: 8px; }
+.bullet { display: flex; gap: 8px; }
+.bullet > span { flex: 1; }
+.sub-line { display: inline-block; padding-left: 1.2em; }
+.thanks { margin-top: 15px; font-family: "Tacteing Local", sans-serif; font-size: .9rem; }
+.signature { margin: 29px 14px 0 0; font-size: .84rem; line-height: 1.75; text-align: right; }
+.signature-title { padding-right: 29px; }
+
+.footer {
+  margin-top: 18px;
+  padding-top: 8px;
+  border-top: 2px solid var(--blue);
+}
+.footer-title {
+  margin-bottom: 8px;
+  font-family: Georgia, serif;
+  font-size: .82rem;
+  letter-spacing: 1.3px;
+}
+.footer-info {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 14px;
+  font-size: .5rem;
+  line-height: 1.4;
+}
+.footer-item { display: flex; align-items: center; gap: 7px; }
+.circle-icon { flex: 0 0 24px; width: 24px; height: 24px; border: 1px solid var(--blue); }
+
+@media (max-width: 600px) {
+  body { padding: 0; }
+  .page { min-height: 100vh; padding: 28px 24px 18px; }
+  .topbar { min-height: 105px; }
+  .brand, .logo { width: 145px; }
+  .header-texts { width: 170px; }
+  .khmer-small { font-size: .62rem; }
+  .watermark { top: 330px; width: 430px; height: 430px; }
+  .title-line { font-size: .92rem; }
+  .course-line { font-size: .82rem; }
+  .year-line { font-size: .85rem; }
+  .paragraph, .rules { font-size: .76rem; }
+  .footer-info { grid-template-columns: 1fr; gap: 7px; }
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html, body { background: #fff; }
+  body { padding: 0; }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    border: 0;
+    box-shadow: none;
+  }
+}

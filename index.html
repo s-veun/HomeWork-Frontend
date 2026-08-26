@@ -1,148 +1,263 @@
 <!DOCTYPE html>
-<html lang="km">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISTAD Notice Template</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Moul&family=Siemreap&display=swap" rel="stylesheet">
+    <title>Happy Dog Day</title>
 </head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: #f7f8fc;
+        color: #1d2939;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 12px clamp(20px, 6vw, 90px);
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+        box-shadow: 0 3px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    .navbar-brand {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .navbar-logo {
+        display: block;
+        width: 120px;
+        max-height: 52px;
+        object-fit: contain;
+        object-position: left center;
+    }
+
+    .navbar-links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .navbar-links a {
+        display: block;
+        padding: 10px 14px;
+        border-radius: 7px;
+        color: #475467;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color .2s ease, color .2s ease;
+    }
+
+    .navbar-links a:hover,
+    .navbar-links a:focus-visible,
+    .navbar-links a.active {
+        background: #fff3dc;
+        color: #b45309;
+        outline: none;
+    }
+
+    .hero {
+        min-height: 700px;
+        background:
+            linear-gradient(rgba(15, 23, 42, 0.18), rgba(15, 23, 42, 0.18)),
+            url("https://people.com/thmb/I2DWw1Kao-x_dlmYtY4AvH2IZw4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(734x279:736x281)/dog-breeds-12e3cd87407749d9b84a772ddf0746cc.jpg") center / cover no-repeat;
+    }
+
+    .dog-section {
+        width: min(900px, calc(100% - 32px));
+        margin: 42px auto 64px;
+    }
+
+    .dog-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fffdf9;
+        text-align: center;
+        box-shadow: 0 10px 22px rgba(91, 69, 24, 0.12);
+    }
+
+    .dog-table caption {
+        margin-bottom: 10px;
+        color: #17634f;
+        font-family: Georgia, serif;
+        font-size: clamp(22px, 3vw, 28px);
+        font-weight: 700;
+    }
+
+    .dog-table th,
+    .dog-table td {
+        border: 1px solid #d9c08a;
+    }
+
+    .dog-table th {
+        padding: 10px 12px;
+        background: #51cec8;
+        color: #172e2c;
+        font-family: Georgia, serif;
+        font-size: 16px;
+    }
+
+    .dog-table td {
+        padding: 10px 12px;
+        font-family: Georgia, serif;
+        font-size: 16px;
+    }
+
+    .dog-table tbody tr:nth-child(odd) {
+        background: #faecd4;
+    }
+
+    .dog-table tbody tr:nth-child(even) {
+        background: #f2ddb3;
+    }
+
+    .dog-table tbody tr:hover {
+        background: #f8e6be;
+    }
+
+    .dog-table input[type="checkbox"] {
+        width: 14px;
+        height: 14px;
+        accent-color: #17634f;
+    }
+
+    .dog-photo {
+        display: block;
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .display-button {
+        padding: 8px 16px;
+        border: 1px solid #17634f;
+        border-radius: 7px;
+        background: #fff;
+        color: #17634f;
+        font-family: Georgia, serif;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .display-button:hover,
+    .display-button:focus-visible {
+        background: #17634f;
+        color: #fff;
+        outline: none;
+    }
+
+    @media (max-width: 560px) {
+        .navbar {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .navbar-links {
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .navbar-links a {
+            padding: 8px 10px;
+        }
+
+        .hero {
+            min-height: 220px;
+        }
+
+        .dog-section {
+            width: calc(100% - 20px);
+            margin-top: 28px;
+            overflow-x: auto;
+        }
+
+        .dog-table {
+            min-width: 720px;
+        }
+    }
+
+
+</style>
 <body>
+    <nav class="navbar" aria-label="Main navigation">
+        <a class="navbar-brand" href="#home" aria-label="Home">
+            <img class="navbar-logo" src="Logo1.png" alt="Logo">
+        </a>
+        <ul class="navbar-links">
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<main class="paper">
+    <section class="hero" aria-label="Dog background image"></section>
 
-    <img src="logo.png" alt="" class="watermark-logo">
-
-    <header class="document-header">
-
-        <div class="brand-area">
-            <img src="Logo1.png" alt="ISTAD logo" class="main-logo logo">
-        </div>
-
-        <div class="national-header">
-            <div class="kingdom moul-14">ព្រះរាជាណាចក្រកម្ពុជា</div>
-            <div class="motto">ជាតិ&nbsp;&nbsp;&nbsp; សាសនា&nbsp;&nbsp;&nbsp; ព្រះមហាក្សត្រ</div>
-
-            <div class="tacteing" aria-hidden="true">3</div>
-        </div>
-    </header>
-
-    <section class="title-block">
-        <div class="title-line moul">សេចក្ដីជូនដំណឹង</div>
-        <div class="title-line moul">ស្ដីពីការបញ្ចុះតម្លៃ អាហារូបករណ៍ ៥០%</div>
-
-        <div class="course-line">
-            <span class="moul course-khmer">លើវគ្គ</span>
-            <span class="course-en">FullStack Web Development</span>
-            <span class="moul course-khmer">ជំនាន់ទី៣</span>
-        </div>
-
-        <div class="title-line moul year-line">ឆ្នាំសិក្សា ២០២៥ - ២០២៦</div>
-    </section>
-
-
-    <section class="content">
-
-        <p class="paragraph indent">
-            វិទ្យាស្ថាន សាយអិនស៍ អេន ថេកណឡូជី អេដវ៉ានស៍ ឌីវេឡុបម៉ិន
-            <strong>(ISTAD)</strong> សូមប្រកាស និងជម្រាបជូនដំណឹងដល់សិស្សានុសិស្ស
-            និស្សិតទាំងអស់ ដែលមានបំណងចង់ចូលរួមការបណ្ដុះបណ្ដាល
-        </p>
-
-        <p class="paragraph">
-            <strong>៥០% លើវគ្គ FullStack Web Development</strong>
-            ជំនាន់ទី៣ អំពីលក្ខខណ្ឌដែលត្រូវបំពេញក្នុងការទទួលបានអាហារូបករណ៍ដូចខាងក្រោម៖
-        </p>
-
-        <div class="rules">
-
-            <div class="rule-row">
-                <div class="roman">I.</div>
-                <div class="rule-content">
-                    <div class="rule-title">
-                        សម្រាប់និស្សិតដែលកំពុងសិក្សាថ្នាក់បរិញ្ញាបត្រនៅ វិទ្យាស្ថាន <strong>ISTAD</strong>
-                    </div>
-                    <div class="bullet">❖ <span>ត្រូវសិក្សាក្រោមបណ្ដុះបណ្ដាលអាហារូបករណ៍ ២៥០ ដុល្លារ</span></div>
-                </div>
-            </div>
-
-            <div class="rule-row">
-                <div class="roman">II.</div>
-                <div class="rule-content">
-                    <div class="rule-title">
-                        សម្រាប់អតីតនិស្សិត <strong>Foundation Course</strong>
-                    </div>
-                    <div class="bullet">❖ <span>ត្រូវសិក្សាក្រោមបណ្ដុះបណ្ដាលអាហារូបករណ៍ ៤០០ ដុល្លារ</span></div>
-                    <div class="bullet multi">
-                        ❖
-                        <span>
-                            ការផ្ដល់និស្សិតបង់ថ្លៃសិក្សាតាមអស់ ក្នុងកំឡុងពេល ១០ថ្ងៃបន្ទាប់ពីទទួលដំណឹងនេះ៖<br>
-                            <span class="sub-line">គឺ ៣៥០ ដុល្លារ (ចាប់ពី០៣ សីហា ដល់ថ្ងៃទី ១៣ សីហា ២០២៦)។</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rule-row">
-                <div class="roman">III.</div>
-                <div class="rule-content">
-                    <div class="rule-title">សម្រាប់និស្សិតទូទៅ</div>
-                    <div class="bullet">❖ <span>ត្រូវសិក្សាក្រោមបណ្ដុះបណ្ដាលអាហារូបករណ៍ ៥០០ ដុល្លារ</span></div>
-                    <div class="bullet multi">
-                        ❖
-                        <span>
-                            ការផ្ដល់និស្សិតបង់ថ្លៃសិក្សាតាមអស់ ក្នុងកំឡុងពេល ១០ថ្ងៃបន្ទាប់ពីទទួលដំណឹងនេះ៖<br>
-                            <span class="sub-line">គឺ ៤០០ ដុល្លារ (ចាប់ពី០៣ សីហា ដល់ថ្ងៃទី ១៣ សីហា ២០២៦)។</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rule-row">
-                <div class="roman">IV.</div>
-                <div class="rule-content">
-                    <div class="rule-title">សម្រាប់និស្សិតថ្មី</div>
-                    <div class="bullet multi">
-                        ❖
-                        <span>និស្សិតថ្មីអាចសូមបញ្ចុះតម្លៃសិក្សាជូនបានរហូតដល់ថ្ងៃទី ១៧ ខែ សីហា ឆ្នាំ ២០២៦។</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <p class="thanks moul">សូមអរគុណ!</p>
-
-        <div class="signature">
-            <div>ធ្វើនៅ ភ្នំពេញ ថ្ងៃទី ... ខែសីហា ឆ្នាំ ២០២៦</div>
-            <div>រាជធានីភ្នំពេញ ថ្ងៃទី ... ខែសីហា ឆ្នាំ២០២៦</div>
-            <div class="signature-title">ការិយាល័យសិក្សា និងរដ្ឋបាល</div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-title">Institute of Science and Technology Advanced Development</div>
-
-        <div class="footer-info">
-            <div class="footer-item">
-                <span class="circle-icon">⌖</span>
-                <span>No.40 , St. 273, Sangkat Boeng kak I,<br>Khan Toul Kork, Phnom Penh</span>
-            </div>
-
-            <div class="footer-item">
-                <span class="circle-icon">☎</span>
-                <span>(+855) 95 990 910<br>(+855) 93 990 910</span>
-            </div>
-
-            <div class="footer-item">
-                <span class="circle-icon">↗</span>
-                <span>cstad.edu.kh<br>info.istad@gmail.com</span>
-            </div>
-        </div>
-    </footer>
-
-</main>
-
+    <main id="home" class="dog-section">
+        <table class="dog-table">
+            <caption>4 different types of dogs</caption>
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Favorite Hobby</th>
+                    <th scope="col">Short About Them</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" aria-label="Select Aria"></td>
+                    <td><img class="dog-photo" src="dog5.jpg" alt="Aria, a puppy"></td>
+                    <td>Aria</td>
+                    <td>3 years</td>
+                    <td>Playing fetch</td>
+                    <td><button class="display-button" type="button">Display</button></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" aria-label="Select Rex"></td>
+                    <td><img class="dog-photo" src="dog3.jpg" alt="Rex, a German Shepherd"></td>
+                    <td>Rex</td>
+                    <td>4 years</td>
+                    <td>Running &amp; training</td>
+                    <td><button class="display-button" type="button">Display</button></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" aria-label="Select Vivienne"></td>
+                    <td><img class="dog-photo" src="dog4.jpeg" alt="Vivienne, a brown puppy"></td>
+                    <td>Vivienne</td>
+                    <td>5 years</td>
+                    <td>Learning tricks</td>
+                    <td><button class="display-button" type="button">Display</button></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" aria-label="Select Elanor"></td>
+                    <td><img class="dog-photo" src="dog5.jpg" alt="Elanor, a puppy"></td>
+                    <td>Elanor</td>
+                    <td>4 years</td>
+                    <td>Playing &amp; cuddling </td>
+                    <td><button class="display-button" type="button">Display</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 </body>
 </html>
